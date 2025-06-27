@@ -19,7 +19,7 @@ export default function Home() {
         description="Final Year Computer Science student at University of Indonesia with a passion for building impactful software solutions. I specialize in full-stack development and data science, with experience delivering real-world applications for government and enterprise clients."
         profileImage="/foto-formal.jpg"
         email="hananiaardha@gmail.com"
-        linkedin="linkedin.com/in/alifa-hanania/"
+        linkedin="https://www.linkedin.com/in/alifa-hanania/"
         github="https://github.com/hunnania"
         cvLink="/cv-alifa-hanania-ardha.pdf"
       />
@@ -120,7 +120,7 @@ export default function Home() {
                 Get In Touch
               </a>
               <a
-                href="linkedin.com/in/alifa-hanania/"
+                href="https://www.linkedin.com/in/alifa-hanania/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-white text-gray-700 px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 border-2 border-theme-primary/30 hover:border-theme-primary group"
