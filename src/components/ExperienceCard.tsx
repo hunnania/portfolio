@@ -73,7 +73,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
       </div>
       
       <button 
-        className="mt-4 inline-flex items-center text-sm font-medium text-theme-primary hover:text-theme-primary/80 transition-colors"
+        className="mt-4 inline-flex items-center text-sm font-medium text-theme-primary hover:text-theme-primary/80 transition-colors cursor-pointer"
         onClick={() => setIsExpanded(!isExpanded)}
       >
         {isExpanded ? 'Show Less' : 'Show More'}

@@ -74,7 +74,7 @@ const ProjectTabs: React.FC<ProjectTabsProps> = ({ projects, categories }) => {
             <button
               key={category.id}
               ref={(el) => { tabsRef.current[index] = el; }}
-              className={`px-6 py-2 rounded-full text-gray-700 relative z-10 transition-colors duration-300 ${
+              className={`px-6 py-2 rounded-full text-gray-700 relative z-10 transition-colors duration-300 cursor-pointer ${
                 activeTab === category.id ? 'text-white' : 'hover:text-gray-900'
               }`}
               onClick={() => setActiveTab(category.id)}
