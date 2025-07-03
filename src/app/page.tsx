@@ -5,6 +5,8 @@ import ProjectCard from '@/components/ProjectCard';
 import ExperienceCard from '@/components/ExperienceCard';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import ProjectTabs from '@/components/ProjectTabs';
+import ExperienceTabs from '@/components/ExperienceTabs';
 import { projectsData, experiencesData } from '@/data/portfolioData';
 
 export default function Home() {
@@ -32,7 +34,7 @@ export default function Home() {
         <div className="absolute top-40 right-32 w-20 h-20 bg-theme-primary/15 rounded-full opacity-40 animate-bounce-slow"></div>
         
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
               My <span className="text-theme-primary">Projects</span>
             </h2>
@@ -41,22 +43,15 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projectsData.map((project, index) => (
-              <ProjectCard
-                key={index}
-                title={project.title}
-                role={project.role}
-                technologies={project.technologies}
-                description={project.description}
-                imageUrl={project.imageUrl}
-                repositoryLink={project.repositoryLink}
-                demoLink={project.demoLink}
-                presentationLink={project.presentationLink}
-                sourceCodeLink={project.sourceCodeLink}
-              />
-            ))}
-          </div>
+          {/* Project Filter Tabs */}
+          <ProjectTabs 
+            projects={projectsData} 
+            categories={[
+              { id: "all", label: "All" },
+              { id: "SE", label: "Software Engineering" },
+              { id: "DS", label: "Data Science" }
+            ]} 
+          />
         </div>
       </section>
 
@@ -77,19 +72,15 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            {experiencesData.map((experience, index) => (
-              <ExperienceCard
-                key={index}
-                title={experience.title}
-                organization={experience.organization}
-                period={experience.period}
-                description={experience.description}
-                achievements={experience.achievements}
-                type={experience.type}
-              />
-            ))}
-          </div>
+          {/* Experience Filter Tabs */}
+          <ExperienceTabs 
+            experiences={experiencesData} 
+            categories={[
+              { id: "all", label: "All" },
+              { id: "teaching", label: "Teaching" },
+              { id: "organizational", label: "Organizational" }
+            ]}
+          />
         </div>
       </section>
 

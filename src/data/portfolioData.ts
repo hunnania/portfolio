@@ -1,6 +1,7 @@
 // Projects data
 export const projectsData = [
   {
+    code: "SE" as const,
     title: "PantauTular",
     role: "Full-stack Developer",
     technologies: ["Next.js", "Django", "PostgreSQL", "GitHub", "Sonarcloud", "Sentry", "Postman", "Draw.io", "Notion"],
@@ -10,6 +11,7 @@ export const projectsData = [
     presentationLink: "https://www.canva.com/design/DAGnt-Rkz2g/2YL8wl9lOVSjXikxewSioQ/view?utm_content=DAGnt-Rkz2g&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hb742f6d985",
   },
   {
+    code: "SE" as const,
     title: "BrewForce Attack",
     role: "Full-stack Developer",
     technologies: ["Next.js", "Spring Boot", "Docker", "Kubernetes", "GitLab", "Postman", "Draw.io", "Burp Suite"],
@@ -18,6 +20,7 @@ export const projectsData = [
     demoLink: "https://kelompok-7-brewforce-fe.pkpl.cs.ui.ac.id/",
   },
   {
+    code: "SE" as const,
     title: "IAST Connect",
     role: "Full-stack Developer",
     technologies: ["Next.js", "Django", "GitHub", "Figma"],
@@ -26,6 +29,7 @@ export const projectsData = [
     repositoryLink: "https://github.com/orgs/ikatanalumnisangtimur/repositories",
   },
   {
+    code: "SE" as const,
     title: "Marmut Music",
     role: "Full-stack Developer",
     technologies: ["Django", "HTML", "CSS", "Draw.io", "Supabase"],
@@ -34,6 +38,7 @@ export const projectsData = [
     repositoryLink: "https://github.com/BasHidup/marmut",
   },
   {
+    code: "SE" as const,
     title: "UlasBuku",
     role: "Full-stack Developer",
     technologies: ["Django", "HTML", "CSS", "Flutter", "GitHub"],
@@ -43,6 +48,7 @@ export const projectsData = [
     presentationLink: "https://www.canva.com/design/DAGrevqwGHI/cgeKdbxqxL4ng0csH-RI6w/view?utm_content=DAGrevqwGHI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hd11ada7e62",
   },
   {
+    code: "DS" as const,
     title: "Lodging Reservation Analytics",
     role: "Data Scientist",
     technologies: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Scikit-learn", "Google Colab"],

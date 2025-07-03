@@ -112,15 +112,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
 
         {/* Back Side */}
-        <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-gradient-to-br from-theme-secondary/50 via-white to-theme-primary/20 rounded-2xl shadow-xl border-2 border-theme-primary/30 p-6 overflow-y-auto">
+        <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-gradient-to-br from-theme-secondary/50 via-white to-theme-primary/20 rounded-2xl shadow-xl border-2 border-theme-primary/30 p-6">
           <div className="h-full flex flex-col">
             <h3 className="text-xl font-bold text-theme-primary mb-3">
               {title}
             </h3>
             
-            <p className="text-gray-700 mb-4 leading-relaxed text-sm flex-grow">
-              {description}
-            </p>
+            {/* Scrollable description section */}
+            <div className="mb-4 overflow-y-auto pr-2 custom-scrollbar flex-grow">
+              <p className="text-gray-700 leading-relaxed text-sm">
+                {description}
+              </p>
+            </div>
             
             <div className="mb-4">
               <h4 className="text-sm font-semibold text-theme-primary mb-2">Technologies:</h4>
