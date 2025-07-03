@@ -23,7 +23,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
 
   return (
     <div 
-      className={`bg-gradient-to-br from-white via-white to-theme-secondary/10 rounded-2xl p-6 shadow-lg border border-theme-secondary/20 transition-all duration-500 ${
+      className={`bg-gradient-to-br from-white via-white to-theme-secondary/10 rounded-2xl p-6 shadow-lg border border-theme-secondary/20 transition-all duration-500 hover:shadow-2xl hover:border-theme-primary/30 ${
         isExpanded ? 'scale-[1.02] shadow-xl' : ''
       }`}
     >

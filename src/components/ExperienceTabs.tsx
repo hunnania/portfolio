@@ -4,18 +4,18 @@ import { useState, useRef, useEffect } from 'react';
 import ExperienceCard from './ExperienceCard';
 
 interface ExperienceTabsProps {
-  experiences: {
+  experiences: Array<{
     title: string;
     organization: string;
     period: string;
     description: string;
     achievements: string[];
     type: string;
-  }[];
-  categories: {
+  }>;
+  categories: Array<{
     id: string;
     label: string;
-  }[];
+  }>;
 }
 
 const ExperienceTabs: React.FC<ExperienceTabsProps> = ({ experiences, categories }) => {
@@ -44,32 +44,39 @@ const ExperienceTabs: React.FC<ExperienceTabsProps> = ({ experiences, categories
       }
     }
   };
-  
-  // Update the active tab indicator position
+
   useEffect(() => {
-    // Small timeout to ensure DOM is fully rendered
-    const timer = setTimeout(() => {
+    updateActiveTabPosition();
+    
+    const handleResize = () => {
       updateActiveTabPosition();
-    }, 100);
-    
-    // Handle window resize
-    window.addEventListener('resize', updateActiveTabPosition);
-    
-    return () => {
-      clearTimeout(timer);
-      window.removeEventListener('resize', updateActiveTabPosition);
     };
-  }, [activeTab, categories]);
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [activeTab]);
+
+  // Split experiences into left and right columns
+  const leftColumnExperiences: typeof filteredExperiences = [];
+  const rightColumnExperiences: typeof filteredExperiences = [];
+
+  filteredExperiences.forEach((experience, index) => {
+    if (index % 2 === 0) {
+      leftColumnExperiences.push(experience);
+    } else {
+      rightColumnExperiences.push(experience);
+    }
+  });
 
   return (
     <div>
       {/* Tab Navigation */}
-      <div className="flex justify-center mb-10">
-        <div className="inline-flex relative p-1.5 bg-gray-100 rounded-full shadow-md">
+      <div className="flex justify-center mb-12">
+        <div className="relative inline-flex bg-white/80 backdrop-blur-sm rounded-full p-1.5 shadow-lg border border-theme-primary/20">
           {categories.map((category, index) => (
             <button
               key={category.id}
-              ref={(el) => { tabsRef.current[index] = el; }}
+              ref={el => { tabsRef.current[index] = el; }}
               className={`px-6 py-2 rounded-full text-gray-700 relative z-10 transition-colors duration-300 ${
                 activeTab === category.id ? 'text-white' : 'hover:text-gray-900'
               }`}
@@ -90,30 +97,44 @@ const ExperienceTabs: React.FC<ExperienceTabsProps> = ({ experiences, categories
         </div>
       </div>
 
-      {/* Experiences Grid */}
-      <div className="grid md:grid-cols-2 gap-8">
+      {/* Two Column Layout */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+        {/* Left Column */}
+        <div className="space-y-8">
+          {leftColumnExperiences.map((experience, index) => (
+            <div
+              key={`left-${index}`}
+              className="transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
+            >
+              <ExperienceCard {...experience} />
+            </div>
+          ))}
+        </div>
+
+        {/* Right Column */}
+        <div className="space-y-8">
+          {rightColumnExperiences.map((experience, index) => (
+            <div
+              key={`right-${index}`}
+              className="transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
+            >
+              <ExperienceCard {...experience} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile Single Column Layout */}
+      <div className="lg:hidden space-y-6">
         {filteredExperiences.map((experience, index) => (
-          <div key={index} className="tab-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-            <ExperienceCard
-              title={experience.title}
-              organization={experience.organization}
-              period={experience.period}
-              description={experience.description}
-              achievements={experience.achievements}
-              type={experience.type}
-            />
+          <div
+            key={`mobile-${index}`}
+            className="transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
+          >
+            <ExperienceCard {...experience} />
           </div>
         ))}
       </div>
-
-      {/* Empty State */}
-      {filteredExperiences.length === 0 && (
-        <div className="text-center py-16">
-          <p className="text-gray-500 text-lg">
-            No experiences found in this category.
-          </p>
-        </div>
-      )}
     </div>
   );
 };
