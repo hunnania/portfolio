@@ -97,43 +97,46 @@ const ExperienceTabs: React.FC<ExperienceTabsProps> = ({ experiences, categories
         </div>
       </div>
 
-      {/* Two Column Layout */}
+      {/* Two Column Layout for Desktop, Single Column for Mobile */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
-        {/* Left Column */}
-        <div className="space-y-8">
+        {/* Left Column - Desktop only */}
+        <div className="space-y-8 hidden lg:block">
           {leftColumnExperiences.map((experience, index) => (
             <div
               key={`left-${index}`}
-              className="transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
+              className="tab-fade-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <ExperienceCard {...experience} />
             </div>
           ))}
         </div>
 
-        {/* Right Column */}
-        <div className="space-y-8">
+        {/* Right Column - Desktop only */}
+        <div className="space-y-8 hidden lg:block">
           {rightColumnExperiences.map((experience, index) => (
             <div
               key={`right-${index}`}
-              className="transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
+              className="tab-fade-in"
+              style={{ animationDelay: `${(index + leftColumnExperiences.length) * 0.1}s` }}
             >
               <ExperienceCard {...experience} />
             </div>
           ))}
         </div>
-      </div>
 
-      {/* Mobile Single Column Layout */}
-      <div className="lg:hidden space-y-6">
-        {filteredExperiences.map((experience, index) => (
-          <div
-            key={`mobile-${index}`}
-            className="transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
-          >
-            <ExperienceCard {...experience} />
-          </div>
-        ))}
+        {/* Mobile Single Column Layout */}
+        <div className="lg:hidden col-span-full space-y-6">
+          {filteredExperiences.map((experience, index) => (
+            <div
+              key={`mobile-${index}`}
+              className="tab-fade-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <ExperienceCard {...experience} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -68,8 +68,8 @@ const ProjectTabs: React.FC<ProjectTabsProps> = ({ projects, categories }) => {
   return (
     <div>
       {/* Tab Navigation */}
-      <div className="flex justify-center mb-10">
-        <div className="inline-flex relative p-1.5 bg-gray-100 rounded-full shadow-md">
+      <div className="flex justify-center mb-12">
+        <div className="relative inline-flex bg-white/80 backdrop-blur-sm rounded-full p-1.5 shadow-lg border border-theme-primary/20">
           {categories.map((category, index) => (
             <button
               key={category.id}
