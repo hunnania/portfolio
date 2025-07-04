@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Alifa Hanania Ardha",
+  title: "Alifa's Portfolio",
   description: "Portfolio of Alifa Hanania Ardha - Software Engineer and Data Scientist specializing in full-stack development and machine learning solutions.",
 };
 

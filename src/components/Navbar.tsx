@@ -50,7 +50,7 @@ const Navbar: React.FC = () => {
           <div className="flex-shrink-0">
             <h1 className="text-xl font-bold text-gray-800 hover:text-theme-primary transition-colors duration-300 cursor-pointer"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-              Alifa H. A.
+              hunnania𖹭
             </h1>
           </div>
 
