@@ -68,26 +68,25 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent hover:from-black/50 transition-all duration-500"></div>
             
-            {/* Floating sparkles */}
-            <div className="absolute top-4 right-4 w-3 h-3 bg-theme-primary rounded-full animate-sparkle"></div>
-            <div className="absolute top-8 right-12 w-2 h-2 bg-theme-secondary rounded-full animate-bounce-slow"></div>
-            <div className="absolute bottom-4 left-4 w-4 h-4 bg-theme-primary/70 rounded-full animate-pulse opacity-70"></div>
-          </div>
-
-          {/* Content Section */}
-          <div className="p-6">
-            <h3 className="text-xl font-bold text-gray-800 mb-3 hover:text-theme-primary transition-colors duration-300">
-              {title}
-            </h3>
-            
-            <div className="mb-4">
-              <span className="inline-block bg-theme-primary text-white px-4 py-2 rounded-full text-sm font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300">
+            {/* Role Badge - Overlaid on top-left */}
+            <div className="absolute top-3 left-3 z-10">
+              <span className="inline-block bg-theme-primary/90 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-xs font-semibold shadow-lg border border-white/20 hover:bg-theme-primary hover:shadow-xl hover:scale-105 transition-all duration-300">
                 {role}
               </span>
             </div>
             
+            {/* Floating sparkles */}
+            <div className="absolute top-4 right-4 w-3 h-3 bg-theme-primary rounded-full animate-sparkle"></div>
+          </div>
+
+          {/* Content Section */}
+          <div className="p-6">
+            <h3 className="text-xl font-bold text-gray-800 mb-4 hover:text-theme-primary transition-colors duration-300">
+              {title}
+            </h3>
+            
             <div className="flex flex-wrap gap-2">
-              {technologies.slice(0, 3).map((tech, index) => (
+              {technologies.slice(0, 5).map((tech, index) => (
                 <span
                   key={index}
                   className="text-xs bg-theme-secondary text-gray-800 px-3 py-1.5 rounded-lg border-2 border-theme-primary/30 font-medium hover:bg-theme-primary hover:text-white transition-all duration-300 hover:scale-105"
@@ -95,9 +94,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                   {tech}
                 </span>
               ))}
-              {technologies.length > 3 && (
+              {technologies.length > 5 && (
                 <span className="text-xs bg-theme-primary text-white px-3 py-1.5 rounded-lg border-2 border-theme-primary font-medium hover:scale-105 transition-transform duration-300">
-                  +{technologies.length - 3} more
+                  +{technologies.length - 5} more
                 </span>
               )}
             </div>

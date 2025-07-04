@@ -1,12 +1,11 @@
 "use client";
 
 import HeroSection from '@/components/HeroSection';
-import ProjectCard from '@/components/ProjectCard';
-import ExperienceCard from '@/components/ExperienceCard';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import ProjectTabs from '@/components/ProjectTabs';
 import ExperienceTabs from '@/components/ExperienceTabs';
+import AnimatedDots from '@/components/AnimatedDots';
 import { projectsData, experiencesData } from '@/data/portfolioData';
 
 export default function Home() {
@@ -18,12 +17,10 @@ export default function Home() {
       <HeroSection />
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gradient-to-br from-theme-secondary/50 via-white to-theme-primary/20 relative overflow-hidden">
-        {/* Floating background elements */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-theme-primary/20 rounded-full opacity-30 animate-float"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 bg-theme-secondary/30 rounded-full opacity-25 animate-float-slow"></div>
-        <div className="absolute top-40 right-32 w-20 h-20 bg-theme-primary/15 rounded-full opacity-40 animate-bounce-slow"></div>
-        
+      <section id="projects" className="py-20 bg-gradient-to-br from-theme-secondary/50 via-white to-theme-primary/20 relative overflow-hidden">        
+        <div className="absolute inset-0 z-0">
+          <AnimatedDots />
+        </div>
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <div className="text-center mb-10">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
@@ -47,12 +44,10 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 bg-gradient-to-br from-theme-primary/20 via-white to-theme-secondary/50 relative overflow-hidden">
-        {/* Floating background elements */}
-        <div className="absolute top-32 right-16 w-28 h-28 bg-theme-primary/20 rounded-full opacity-20 animate-float"></div>
-        <div className="absolute bottom-32 left-20 w-36 h-36 bg-theme-secondary/30 rounded-full opacity-25 animate-float-slow"></div>
-        <div className="absolute top-16 left-32 w-16 h-16 bg-theme-primary/15 rounded-full opacity-30 animate-bounce-slow"></div>
-        
+      <section id="experience" className="py-20 bg-gradient-to-br from-theme-primary/20 via-white to-theme-secondary/50 relative overflow-hidden">        
+        <div className="absolute inset-0 z-0">
+          <AnimatedDots />
+        </div>
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
@@ -77,10 +72,9 @@ export default function Home() {
 
       {/* Closing Section */}
       <section id="contact" className="py-20 bg-gradient-to-br from-theme-secondary/50 via-white to-theme-primary/50 relative overflow-hidden">
-        {/* Floating background elements */}
-        <div className="absolute top-16 left-16 w-24 h-24 bg-theme-primary/20 rounded-full opacity-10 animate-float"></div>
-        <div className="absolute bottom-16 right-24 w-32 h-32 bg-theme-secondary/30 rounded-full opacity-15 animate-float-slow"></div>
-        
+        <div className="absolute inset-0 z-0">
+          <AnimatedDots />
+        </div>
         <div className="container mx-auto px-6 lg:px-8 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-6">

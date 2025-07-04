@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import AnimatedDots from './AnimatedDots';
 
 const HeroSection: React.FC = () => {
   const [currentRole, setCurrentRole] = useState(0);
@@ -28,33 +29,7 @@ const HeroSection: React.FC = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 py-20">
-      {/* Animated Dots Background */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        {/* Top Left Cluster */}
-        <div className="absolute top-20 left-10 w-3 h-3 bg-theme-primary rounded-full animate-pulse-gentle"></div>
-        <div className="absolute top-32 left-20 w-2 h-2 bg-theme-secondary rounded-full animate-pulse-gentle" style={{ animationDelay: '0.5s' }}></div>
-        <div className="absolute top-16 left-32 w-1.5 h-1.5 bg-theme-primary rounded-full animate-pulse-gentle" style={{ animationDelay: '1s' }}></div>
-        
-        {/* Top Right Cluster */}
-        <div className="absolute top-24 right-16 w-2.5 h-2.5 bg-theme-secondary rounded-full animate-pulse-gentle" style={{ animationDelay: '0.3s' }}></div>
-        <div className="absolute top-40 right-32 w-2 h-2 bg-theme-primary rounded-full animate-pulse-gentle" style={{ animationDelay: '0.8s' }}></div>
-        <div className="absolute top-12 right-24 w-1 h-1 bg-theme-secondary rounded-full animate-pulse-gentle" style={{ animationDelay: '1.2s' }}></div>
-        
-        {/* Bottom Left Cluster */}
-        <div className="absolute bottom-32 left-16 w-2 h-2 bg-theme-primary rounded-full animate-pulse-gentle" style={{ animationDelay: '0.7s' }}></div>
-        <div className="absolute bottom-20 left-8 w-1.5 h-1.5 bg-theme-secondary rounded-full animate-pulse-gentle" style={{ animationDelay: '1.3s' }}></div>
-        <div className="absolute bottom-48 left-28 w-3 h-3 bg-theme-primary rounded-full animate-pulse-gentle" style={{ animationDelay: '0.2s' }}></div>
-        
-        {/* Bottom Right Cluster */}
-        <div className="absolute bottom-28 right-12 w-2.5 h-2.5 bg-theme-secondary rounded-full animate-pulse-gentle" style={{ animationDelay: '0.9s' }}></div>
-        <div className="absolute bottom-16 right-28 w-1.5 h-1.5 bg-theme-primary rounded-full animate-pulse-gentle" style={{ animationDelay: '0.4s' }}></div>
-        <div className="absolute bottom-40 right-20 w-2 h-2 bg-theme-secondary rounded-full animate-pulse-gentle" style={{ animationDelay: '1.1s' }}></div>
-        
-        {/* Center Scattered */}
-        <div className="absolute top-1/3 left-1/4 w-1 h-1 bg-theme-primary rounded-full animate-pulse-gentle" style={{ animationDelay: '0.6s' }}></div>
-        <div className="absolute top-2/3 right-1/3 w-1.5 h-1.5 bg-theme-secondary rounded-full animate-pulse-gentle" style={{ animationDelay: '1.4s' }}></div>
-        <div className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-theme-primary rounded-full animate-pulse-gentle" style={{ animationDelay: '0.1s' }}></div>
-      </div>
+      <AnimatedDots />
 
       {/* Main Content Container */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
