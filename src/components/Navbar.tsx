@@ -58,7 +58,7 @@ const Navbar: React.FC = () => {
           <div className="hidden md:flex items-center space-x-8">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="text-gray-700 hover:text-theme-primary font-medium transition-all duration-300 relative group"
+              className="text-gray-700 hover:text-theme-primary font-medium transition-all duration-300 relative group cursor-pointer"
             >
               Home
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
             
             <button
               onClick={() => scrollToSection('projects')}
-              className="text-gray-700 hover:text-theme-primary font-medium transition-all duration-300 relative group"
+              className="text-gray-700 hover:text-theme-primary font-medium transition-all duration-300 relative group cursor-pointer"
             >
               Projects
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
@@ -74,7 +74,7 @@ const Navbar: React.FC = () => {
             
             <button
               onClick={() => scrollToSection('experience')}
-              className="text-gray-700 hover:text-theme-primary font-medium transition-all duration-300 relative group"
+              className="text-gray-700 hover:text-theme-primary font-medium transition-all duration-300 relative group cursor-pointer"
             >
               Experience
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-theme-primary transition-all duration-300 group-hover:w-full"></span>
@@ -82,7 +82,7 @@ const Navbar: React.FC = () => {
             
             <button
               onClick={() => scrollToSection('contact')}
-              className="bg-theme-primary text-white px-6 py-2 rounded-full font-medium hover:bg-theme-primary/90 hover:shadow-lg hover:scale-105 transition-all duration-300 animate-button-pulse"
+              className="bg-theme-primary text-white px-6 py-2 rounded-full font-medium hover:bg-theme-primary/90 hover:shadow-lg hover:scale-105 transition-all duration-300 animate-button-pulse cursor-pointer"
             >
               Contact
             </button>
