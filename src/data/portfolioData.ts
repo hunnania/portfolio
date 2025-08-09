@@ -12,6 +12,15 @@ export const projectsData = [
   },
   {
     code: "SE" as const,
+    title: "Watchlog",
+    role: "Full-stack Developer",
+    technologies: ["Nuxt.js", "Vue", "Golang", "Pinia", "Neon", "GitHub", "Vercel", "Fly.io", "Postman"],
+    description: "A personal movie and series tracking app inspired by Letterboxd, built with Go and Vue.js. It lets me log and rate watched titles, manage a watchlist, and keep a viewing diary. Public visitors can browse my ratings and favorites, while CRUD features remain private to my account.",
+    imageUrl: "/watchlog.png",
+    demoLink: "https://watchlog-hunnania.vercel.app/",
+  },
+  {
+    code: "SE" as const,
     title: "BrewForce Attack",
     role: "Full-stack Developer",
     technologies: ["Next.js", "Spring Boot", "Docker", "Kubernetes", "GitLab", "Postman", "Draw.io", "Burp Suite"],
